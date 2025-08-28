@@ -3,14 +3,14 @@ package tests;
 import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.LoginPage;
+import pages.SignUpLoginPage;
 
-public class LoginTest extends BaseTest {
+public class SignUpLoginTest extends BaseTest {
 
     @Test
     public void testValidLogin() throws InterruptedException {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.login("test@example.com", "password123");
+        SignUpLoginPage signUpLoginPage = new SignUpLoginPage(driver);
+        signUpLoginPage.login("test@example.com", "password123");
         Thread.sleep(5000);
 
         String currentUrl = driver.getCurrentUrl();
