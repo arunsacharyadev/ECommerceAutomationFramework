@@ -14,7 +14,7 @@ This is a Java + Selenium WebDriver test automation framework using TestNG and M
 2. Run `mvn clean test`
 
 ## Test Cases
-- Valid login with email and password
+- Test Case 1: Register User
 
 ## Site Under Test
 https://automationexercise.com
