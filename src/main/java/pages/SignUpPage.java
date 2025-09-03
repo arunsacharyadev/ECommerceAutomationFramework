@@ -5,13 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SignUpLoginPage {
+public class SignUpPage {
     final WebDriver driver;
 
     // ====== Locators ======
-    @FindBy(linkText = "Signup / Login")
-    WebElement signupLoginButton;
-
     @FindBy(xpath = "//h2[text()='New User Signup!']")
     WebElement newUserSignupText;
 
@@ -97,15 +94,12 @@ public class SignUpLoginPage {
     WebElement accountDeletedText;
 
     // ====== Constructor ======
-    public SignUpLoginPage(WebDriver driver) {
+    public SignUpPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
     // ====== Actions ======
-    public void clickSignupLogin() {
-        signupLoginButton.click();
-    }
 
     public boolean isNewUserSignupVisible() {
         return newUserSignupText.isDisplayed();
