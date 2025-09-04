@@ -3,13 +3,12 @@
 <suite name="Failed suite [AutomationSuite]">
   <test thread-count="5" name="ECommerceTests(failed)">
     <classes>
-      <class name="tests.SignUpLoginTest">
+      <class name="tests.LoginTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="testRegisterUser"/>
           <include name="setup"/>
+          <include name="loginWithCorrectCredentials"/>
         </methods>
-      </class> <!-- tests.SignUpLoginTest -->
+      </class> <!-- tests.LoginTest -->
     </classes>
   </test> <!-- ECommerceTests(failed) -->
 </suite> <!-- Failed suite [AutomationSuite] -->

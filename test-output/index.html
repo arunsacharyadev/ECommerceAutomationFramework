@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-AutomationSuite" class="navigator-link">
-              <span class="suite-name border-passed">AutomationSuite</span>
+              <span class="suite-name border-failed">AutomationSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,21 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-AutomationSuite" class="hide-methods passed suite-AutomationSuite"> (hide)</a> <!-- hide-methods passed suite-AutomationSuite -->
-                      <a href="#" panel-name="suite-AutomationSuite" class="show-methods passed suite-AutomationSuite"> (show)</a> <!-- show-methods passed suite-AutomationSuite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-AutomationSuite" class="hide-methods failed suite-AutomationSuite"> (hide)</a> <!-- hide-methods failed suite-AutomationSuite -->
+                      <a href="#" panel-name="suite-AutomationSuite" class="show-methods failed suite-AutomationSuite"> (show)</a> <!-- show-methods failed suite-AutomationSuite -->
                     </span>
-                    <div class="method-list-content passed suite-AutomationSuite">
+                    <div class="method-list-content failed suite-AutomationSuite">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-AutomationSuite" title="tests.SignUpLoginTest" class="method navigator-link" hash-for-method="testRegisterUser">testRegisterUser</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AutomationSuite" title="tests.LoginTest" class="method navigator-link" hash-for-method="loginWithCorrectCredentials">loginWithCorrectCredentials</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-AutomationSuite -->
+                    </div> <!-- method-list-content failed suite-AutomationSuite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -118,21 +118,49 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-AutomationSuite" class="panel AutomationSuite">
-          <div class="suite-AutomationSuite-class-passed">
+          <div class="suite-AutomationSuite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">tests.SignUpLoginTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">tests.LoginTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testRegisterUser">
-                  </a> <!-- testRegisterUser -->
-                  <span class="method-name">testRegisterUser</span>
+                  <a name="loginWithCorrectCredentials">
+                  </a> <!-- loginWithCorrectCredentials -->
+                  <span class="method-name">loginWithCorrectCredentials</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[contains(text(),&apos;Logged in as&apos;)]&quot;}
+  (Session info: chrome=139.0.7258.155)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.34.0&apos;, revision: &apos;707dcb4246*&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.6&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f37c4cc42b35557bfc8ea41033a5c4ca, findElement {value=//a[contains(text(),&apos;Logged in as&apos;)], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.155, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: C:\Users\ARUNS~1\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64491}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64491/devtoo..., se:cdpVersion: 139.0.7258.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f37c4cc42b35557bfc8ea41033a5c4ca
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy11.isDisplayed(Unknown Source)
+	at pages.AccountPage.isLoggedInAsVisible(AccountPage.java:26)
+	at tests.LoginTest.loginWithCorrectCredentials(LoginTest.java:46)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-AutomationSuite-class-passed -->
+          </div> <!-- suite-AutomationSuite-class-failed -->
         </div> <!-- panel AutomationSuite -->
         <div panel-name="test-xml-AutomationSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -145,7 +173,7 @@
 &lt;suite name=&quot;AutomationSuite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;ECommerceTests&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;tests.SignUpLoginTest&quot;/&gt;
+      &lt;class name=&quot;tests.LoginTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- ECommerceTests --&gt;
 &lt;/suite&gt; &lt;!-- AutomationSuite --&gt;
@@ -187,14 +215,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testRegisterUser')
-data.setCell(0, 2, 'tests.SignUpLoginTest')
-data.setCell(0, 3, 22722);
+data.setCell(0, 1, 'loginWithCorrectCredentials')
+data.setCell(0, 2, 'tests.LoginTest')
+data.setCell(0, 3, 13650);
 window.suiteTableData['AutomationSuite']= { tableData: data, tableDiv: 'times-div-AutomationSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 22 seconds</span>
+              <span class="suite-total-time">Total running time: 13 seconds</span>
               <div id="times-div-AutomationSuite">
               </div> <!-- times-div-AutomationSuite -->
             </div> <!-- times-div -->
@@ -220,19 +248,17 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">tests.SignUpLoginTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">tests.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">testRegisterUser</span>
-                <span class="method-start">8608 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">loginWithCorrectCredentials</span>
+                <span class="method-start">11125 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-class after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">31341 ms</span>
-              </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
