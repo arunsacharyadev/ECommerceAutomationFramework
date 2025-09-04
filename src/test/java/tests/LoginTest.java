@@ -76,6 +76,34 @@ public class LoginTest extends BaseTest {
 		// Step 8: Verify error 'Your email or password is incorrect!' is visible
 		Assert.assertTrue(loginPage.isErrorVisible(), "Error message is not visible");
 	}
+
+	@Test
+	public void testLogoutUser() {
+		// Step 3: Verify that home page is visible successfully
+		Assert.assertTrue(homePage.isHomePageVisible(), "Home page is not visible");
+
+		// Step 4: Click on 'Signup / Login' button
+		homePage.clickSignupLogin();
+
+		// Step 5: Verify 'Login to your account' is visible
+		Assert.assertTrue(loginPage.isLoginHeaderVisible(), "Login header not visible");
+
+		// Step 6: Enter correct email address and password
+		loginPage.enterEmailAndPassword("testuser4320@gmail.com", "Password123");
+
+		// Step 7: Click 'login' button
+		loginPage.clickLoginButton();
+
+		// Step 8: Verify that 'Logged in as username' is visible
+		Assert.assertTrue(accountPage.isLoggedInAsVisible(), "User not logged in");
+
+		// Step 9: Click 'Logout' button
+		accountPage.clickLogout();
+
+		// Step 10: Verify that user is navigated to login page
+		Assert.assertTrue(loginPage.isLoginHeaderVisible(), "User was not redirected to login page after logout");
+	}
+
 	@AfterMethod
 	public void tearDown() {
 		quitDriver();

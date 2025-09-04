@@ -17,6 +17,9 @@ public class AccountPage {
 
 	@FindBy(xpath = "//b[normalize-space()='Account Deleted!']")
 	private WebElement accountDeletedText;
+	
+	@FindBy(xpath = "//a[contains(text(),' Logout')]")
+	private WebElement logoutBtn;
 
 	public AccountPage(WebDriver driver) {
 		this.driver = driver;
@@ -33,5 +36,9 @@ public class AccountPage {
 
 	public boolean isAccountDeletedVisible() {
 		return accountDeletedText.isDisplayed();
+	}
+	
+	public void clickLogout() {
+		logoutBtn.click();
 	}
 }
