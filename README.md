@@ -17,6 +17,7 @@ This is a Java + Selenium WebDriver test automation framework using TestNG and M
 - Test Case 1: Register User
 - Test Case 2: Login User with correct email and password
 - Test Case 3: Login User with incorrect email and password
+- Test Case 4: Logout User
 
 ## Site Under Test
 https://automationexercise.com
