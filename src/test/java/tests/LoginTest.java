@@ -53,4 +53,24 @@ public class LoginTest extends BasePage {
 		Assert.assertTrue(accountPage.isAccountDeletedVisible(), "Account not deleted!");
 	}
 
+	@Test
+	public void testLoginUserwithincorrectemailandpassword() {
+		// Step 3: Verify that home page is visible successfully
+		Assert.assertTrue(homePage.isHomePageVisible(), "Home page is not visible");
+
+		// Step 4: Click on 'Signup / Login' button
+		homePage.clickSignupLogin();
+
+		// Step 5: Verify 'Login to your account' is visible
+		Assert.assertTrue(loginPage.isLoginHeaderVisible(), "Login header not visible");
+
+		// Step 6: Enter incorrect email address and password
+		loginPage.enterEmailAndPassword("testuser@gmail.com", "Password123");
+
+		// Step 7: Click 'login' button
+		loginPage.clickLoginButton();
+
+		// Step 8: Verify error 'Your email or password is incorrect!' is visible
+		Assert.assertTrue(loginPage.isErrorVisible(), "Error message is not visible");
+	}
 }

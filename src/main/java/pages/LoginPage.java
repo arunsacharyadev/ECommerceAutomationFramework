@@ -21,6 +21,8 @@ public class LoginPage {
 	@FindBy(xpath = "//button[normalize-space()='Login']")
 	private WebElement loginBtn;
 
+	@FindBy(xpath = "//p[text()='Your email or password is incorrect!']")
+	private WebElement errorMsg;
 
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
@@ -31,6 +33,9 @@ public class LoginPage {
 		return loginHeader.isDisplayed();
 	}
 
+	public boolean isErrorVisible() {
+		return errorMsg.isDisplayed();
+	}
 
 	public void enterEmailAndPassword(String email, String password) {
 		emailField.sendKeys(email);
