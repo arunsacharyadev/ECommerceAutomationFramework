@@ -1,9 +1,10 @@
 package tests;
 
 import org.testng.Assert;
+
 import org.testng.annotations.*;
 
-import pages.BasePage;
+import base.BaseTest;
 import pages.HomePage;
 import pages.SignUpPage;
 import utils.ConfigReader;
@@ -11,7 +12,7 @@ import utils.ConfigReader;
 import java.io.IOException;
 import java.util.Random;
 
-public class SignUpTest extends BasePage {
+public class SignUpTest extends BaseTest {
 	SignUpPage signUpPage;
 	HomePage homePage;
 

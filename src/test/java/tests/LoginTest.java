@@ -1,7 +1,7 @@
 package tests;
 
 import pages.AccountPage;
-import pages.BasePage;
+
 import pages.HomePage;
 import pages.LoginPage;
 import utils.ConfigReader;
@@ -9,15 +9,18 @@ import utils.ConfigReader;
 import java.io.IOException;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class LoginTest extends BasePage {
+import base.BaseTest;
+
+public class LoginTest extends BaseTest {
 	LoginPage loginPage;
 	HomePage homePage;
 	AccountPage accountPage;
 
-	@BeforeClass
+	@BeforeMethod
 	public void setup() throws IOException {
 		initializeDriver();
 		driver.get(ConfigReader.getProperty("url"));
@@ -38,7 +41,7 @@ public class LoginTest extends BasePage {
 		Assert.assertTrue(loginPage.isLoginHeaderVisible(), "Login header not visible");
 
 		// Step 6: Enter correct email address and password
-		loginPage.enterEmailAndPassword("testuser@gmail.com", "Password123");
+		loginPage.enterEmailAndPassword("testuser4320@gmail.com", "Password123");
 
 		// Step 7: Click 'login' button
 		loginPage.clickLoginButton();
@@ -72,5 +75,9 @@ public class LoginTest extends BasePage {
 
 		// Step 8: Verify error 'Your email or password is incorrect!' is visible
 		Assert.assertTrue(loginPage.isErrorVisible(), "Error message is not visible");
+	}
+	@AfterMethod
+	public void tearDown() {
+		quitDriver();
 	}
 }
