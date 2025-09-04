@@ -1,29 +1,20 @@
-package base;
+package pages;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import utils.ConfigReader;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.Properties;
 
-public class BaseTest {
+public class BasePage {
 	protected WebDriver driver;
-	protected Properties config;
-
-	public void loadConfig() throws IOException {
-		config = new Properties();
-		FileInputStream fis = new FileInputStream("config/config.properties");
-		config.load(fis);
-	}
 
 	public void initializeDriver() throws IOException {
-		loadConfig();
-		String browser = config.getProperty("browser");
+		String browser = ConfigReader.getProperty("browser");
 
 		switch (browser) {
 		case "chrome":
