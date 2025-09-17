@@ -2,6 +2,7 @@ package base;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.logging.LogManager;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,12 +10,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import utils.ConfigReader;
+import utils.Log;
 
 public class BaseTest {
 	protected WebDriver driver;
 
 	public void initializeDriver() throws IOException {
 		String browser = ConfigReader.getProperty("browser");
+		Log.info("Setting up WebDriver...");
 
 		switch (browser) {
 		case "chrome":
@@ -31,10 +34,12 @@ public class BaseTest {
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
+		Log.info("Navigating to test URL...");
 	}
 
 	public void quitDriver() {
 		if (driver != null) {
+			Log.info("Quitting WebDriver...");
 			driver.quit();
 		}
 	}

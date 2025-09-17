@@ -5,6 +5,7 @@ import pages.AccountPage;
 import pages.HomePage;
 import pages.LoginPage;
 import utils.ConfigReader;
+import utils.Log;
 
 import java.io.IOException;
 
@@ -31,6 +32,7 @@ public class LoginTest extends BaseTest {
 
 	@Test
 	public void testLoginUserwithcorrectemailandPassword() {
+		Log.info("testLoginUserwithcorrectemailandPassword");
 		// Step 3: Verify that home page is visible successfully
 		Assert.assertTrue(homePage.isHomePageVisible(), "Home page is not visible");
 
@@ -58,6 +60,7 @@ public class LoginTest extends BaseTest {
 
 	@Test
 	public void testLoginUserwithincorrectemailandpassword() {
+		Log.info("testLoginUserwithincorrectemailandpassword");
 		// Step 3: Verify that home page is visible successfully
 		Assert.assertTrue(homePage.isHomePageVisible(), "Home page is not visible");
 
@@ -79,6 +82,7 @@ public class LoginTest extends BaseTest {
 
 	@Test
 	public void testLogoutUser() {
+		Log.info("testLogoutUser");
 		// Step 3: Verify that home page is visible successfully
 		Assert.assertTrue(homePage.isHomePageVisible(), "Home page is not visible");
 
