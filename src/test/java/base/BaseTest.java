@@ -1,8 +1,8 @@
 package base;
 
 import java.io.IOException;
+
 import java.time.Duration;
-import java.util.logging.LogManager;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,6 +13,7 @@ import utils.ConfigReader;
 import utils.Log;
 
 public class BaseTest {
+
 	protected WebDriver driver;
 
 	public void initializeDriver() throws IOException {

@@ -10,7 +10,7 @@ public class HomePage {
 
 	// Locators
 	@FindBy(linkText = "Signup / Login")
-	private WebElement signupLoginBtn;
+	private WebElement signupLoginButton;
 
 	@FindBy(xpath = "//div[@class='logo pull-left']")
 	private WebElement homePageBanner;
@@ -25,6 +25,8 @@ public class HomePage {
 	}
 
 	public void clickSignupLogin() {
-		signupLoginBtn.click();
+		signupLoginButton.click();
+	}
+	
 	}
 }

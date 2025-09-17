@@ -10,8 +10,8 @@ import utils.Log;
 import java.io.IOException;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
@@ -21,7 +21,7 @@ public class LoginTest extends BaseTest {
 	HomePage homePage;
 	AccountPage accountPage;
 
-	@BeforeMethod
+	@BeforeTest
 	public void setup() throws IOException {
 		initializeDriver();
 		driver.get(ConfigReader.getProperty("url"));
@@ -31,8 +31,10 @@ public class LoginTest extends BaseTest {
 	}
 
 	@Test
+
 	public void testLoginUserwithcorrectemailandPassword() {
 		Log.info("testLoginUserwithcorrectemailandPassword");
+
 		// Step 3: Verify that home page is visible successfully
 		Assert.assertTrue(homePage.isHomePageVisible(), "Home page is not visible");
 
@@ -61,6 +63,7 @@ public class LoginTest extends BaseTest {
 	@Test
 	public void testLoginUserwithincorrectemailandpassword() {
 		Log.info("testLoginUserwithincorrectemailandpassword");
+
 		// Step 3: Verify that home page is visible successfully
 		Assert.assertTrue(homePage.isHomePageVisible(), "Home page is not visible");
 
@@ -83,6 +86,7 @@ public class LoginTest extends BaseTest {
 	@Test
 	public void testLogoutUser() {
 		Log.info("testLogoutUser");
+
 		// Step 3: Verify that home page is visible successfully
 		Assert.assertTrue(homePage.isHomePageVisible(), "Home page is not visible");
 
@@ -93,7 +97,7 @@ public class LoginTest extends BaseTest {
 		Assert.assertTrue(loginPage.isLoginHeaderVisible(), "Login header not visible");
 
 		// Step 6: Enter correct email address and password
-		loginPage.enterEmailAndPassword("testuser4320@gmail.com", "Password123");
+		loginPage.enterEmailAndPassword("testuser4321@gmail.com", "Password123");
 
 		// Step 7: Click 'login' button
 		loginPage.clickLoginButton();
@@ -108,7 +112,7 @@ public class LoginTest extends BaseTest {
 		Assert.assertTrue(loginPage.isLoginHeaderVisible(), "User was not redirected to login page after logout");
 	}
 
-	@AfterMethod
+	@AfterTest
 	public void tearDown() {
 		quitDriver();
 	}
