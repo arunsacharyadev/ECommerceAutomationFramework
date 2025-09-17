@@ -17,7 +17,7 @@ public class SignUpTest extends BaseTest {
 	SignUpPage signUpPage;
 	HomePage homePage;
 
-	@BeforeClass
+	@BeforeTest
 	public void setup() throws IOException {
 		initializeDriver();
 		driver.get(ConfigReader.getProperty("url"));
@@ -28,6 +28,7 @@ public class SignUpTest extends BaseTest {
 	@Test
 	public void testRegisterUser() {
 		Log.info("testRegisterUser");
+
 		// Step 3: Verify that home page is visible successfully
 		Assert.assertTrue(homePage.isHomePageVisible(), "Home page is not visible");
 
@@ -82,7 +83,7 @@ public class SignUpTest extends BaseTest {
 
 	}
 
-	@AfterClass
+	@AfterTest
 	public void tearDown() {
 		quitDriver();
 	}
